@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+org.grails.ide.eclipse.core.COMMAND_TIMEOUT=180000
+org.grails.ide.eclipse.core.cleanOutput=true
+org.grails.ide.eclipse.core.launch.properties=GRAILS_HOME\=/home/metro/IDES/eclipse-grails/grails-2.5.2/

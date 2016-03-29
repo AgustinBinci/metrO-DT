@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<installs>
+<install is-default="false">
+<home>/home/metro/IDES/eclipse-grails/grails-3.1.1/</home>
+<name>Grails 3.1.1</name>
+</install>
+<install is-default="true">
+<home>/home/metro/IDES/eclipse-grails/grails-2.5.2/</home>
+<name>Grails 2.5.2.BUILD-SNAPSHOT</name>
+</install>
+<install is-default="false">
+<home>/home/metro/IDES/eclipse-grails/grails-2.5.3/</home>
+<name>Grails 2.5.3</name>
+</install>
+</installs>
