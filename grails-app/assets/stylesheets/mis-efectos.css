@@ -1,0 +1,20 @@
+header {
+	background:#000000;
+	color:#ffffff;
+}
+
+.asterisco {
+	color: #B93434;
+}
+
+.help-danger {
+	color: #A94442;
+}
+
+.help-success {
+	color: #3c763d;
+}
+
+.formulario {
+	width: 30%;
+}
