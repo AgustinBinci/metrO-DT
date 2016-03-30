@@ -1,0 +1,35 @@
+package workspacegrails
+
+
+class AdminInterceptor extends GeneralInterceptor {
+
+	AdminInterceptor() {
+		match(controller: "fechaActual", action: "edit");
+		match(controller: "club", action: "edit");
+		match(controller: "club", action: "create");
+		match(controller: "club", action: "delete");
+		match(controller: "jugador", action: "edit");
+		match(controller: "jugador", action: "create");
+		match(controller: "jugador", action: "delete");
+		match(controller: "opcionesDelJuego", action: "edit");
+    }
+
+    boolean before() {
+		if (this.validarSesion()) {
+			if (session.user.getAdmin()) return true;
+			else {
+			  flash.errorMessage = "No tenés permisos para acceder a esa pagina";
+			  chain(uri: "/");
+			  return false;
+			}
+		}
+		else return false;
+     }
+
+    boolean after() { true }
+
+    void afterView() {
+        // no-op
+    }
+
+}
