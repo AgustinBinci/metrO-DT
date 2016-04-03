@@ -18,3 +18,11 @@ header {
 .formulario {
 	width: 30%;
 }
+
+.alerta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 100%;
+  line-height: 34px;
+}

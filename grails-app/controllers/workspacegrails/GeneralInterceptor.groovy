@@ -9,6 +9,7 @@ class GeneralInterceptor {
 	    match(controller: "club");
 	    match(controller: "jugador");
 	    match(controller: "equipoDeUnaFecha");
+	    match(controller: "error");
 	    match(controller: "usuario", action: "edit");
 	    match(controller: "usuario", action: "index");
 	    match(controller: "usuario", action: "show");

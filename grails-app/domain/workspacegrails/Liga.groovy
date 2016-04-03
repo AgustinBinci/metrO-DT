@@ -10,8 +10,8 @@ class Liga {
 		torneoPrincipal(nullable: true);
 		fechasJugadas(nullable: true);
 		fechaActual(nullable: true);
-		fechaDeInicio(nullable: true, min: 1, max: 999999999999);
-		fechaDeFin(nullable: true, min: 1, max: 999999999999);
+		fechaDeInicio(nullable: true, min: 1, max: Integer.MAX_VALUE);
+		fechaDeFin(nullable: true, min: 1, max: Integer.MAX_VALUE);
 		premioPorFechaGanada(nullable: true);
 		premioPorFechaPerdida(nullable: true);
 		premioPorTorneoGanado(nullable: true);

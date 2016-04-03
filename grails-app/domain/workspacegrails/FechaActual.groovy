@@ -3,10 +3,10 @@ package workspacegrails
 class FechaActual {
 
     static constraints = {
-		fecha(nullable: true, min: 1, max: 99999999999);
+		fecha(nullable: true, min: 1, max: Integer.MAX_VALUE);
 		fechaDeInicio(nullable: true);
-		fechaDeInicio(nullable: true);
-		fechaDeInicio(nullable: true);
+		fechaIniciada(nullable: true);
+		fechaFinalizada(nullable: true);
     }
 
 	Integer numeroDeFecha;

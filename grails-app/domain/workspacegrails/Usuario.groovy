@@ -4,13 +4,13 @@ class Usuario implements Comparable<Usuario> {
 
     static constraints = {
 		nombre(nullable: true, blank: false, size: 1..50)
-		contrasenia(nullable: true, blank: false, size: 1..50, password: true);
+		contrasenia(nullable: true, blank: false, size: 1..255, password: true);
 		email(nullable: true, blank: false, size: 1..50, email:true, unique: true);
 		admin(nullable: true);
-		presupuesto(nullable: true, max: 999999999999);
-		cambiosGranDt(nullable: true, min: 0, max: 9999999999999);
-		cambiosInternos(nullable: true, min: 0, max: 9999999999999);
-		cambiosDeSuplente(nullable: true, min: 0, max: 9999999999999);
+		presupuesto(nullable: true, max: Integer.MAX_VALUE);
+		cambiosGranDt(nullable: true, min: 0, max: Integer.MAX_VALUE);
+		cambiosInternos(nullable: true, min: 0, max: Integer.MAX_VALUE);
+		cambiosDeSuplente(nullable: true, min: 0, max: Integer.MAX_VALUE);
 		equipos(nullable: true);
 		cambiosAeleccion(nullable: true);
     }

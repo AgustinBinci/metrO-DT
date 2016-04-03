@@ -3,7 +3,7 @@ package workspacegrails
 class EquipoDeUnaFecha {
 
     static constraints = {
-		fecha(nullable: true, min: 1, max: 99999999999);
+		fecha(nullable: true, min: 1, max: Integer.MAX_VALUE);
 		formacion(nullable: true);
     }
 

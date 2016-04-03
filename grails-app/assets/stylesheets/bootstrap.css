@@ -4063,7 +4063,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:focus {
   color: #555;
   cursor: default;
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
@@ -4620,7 +4620,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse {
   background-color: #222;
-  border-color: #080808;
+  border-color: #222;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
@@ -6862,6 +6862,20 @@ td.texto-filas-right {
   border-color: black;
 }
 
-body { padding-top: 70px; }
+body { 
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+#footer {
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+#footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 
 /*# sourceMappingURL=bootstrap.css.map */

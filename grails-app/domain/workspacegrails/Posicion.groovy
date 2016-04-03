@@ -3,17 +3,17 @@ package workspacegrails
 abstract class Posicion {
 
     static constraints = {
-		valorPorGolAfavor(nullable: true);
-		valorPorGolEnContra(nullable: true);
-		valorPorGolDePenal(nullable: true);
-		valorPorPenalErrado(nullable: true);
-		valorPorPenalAtajado(nullable: true);
-		valorPorGolRecibido(nullable: true);
-		valorPorVallaInvicta(nullable: true);
-		valorPorAmonestacion(nullable: true);
-		valorPorExpulsion(nullable: true);
-		valorPorChenemigo(nullable: true);
-		valorPorFigura(nullable: true);
+		valorPorGolAfavor(nullable: true, max: Integer.MAX_VALUE);
+		valorPorGolEnContra(nullable: true, max: Integer.MAX_VALUE);
+		valorPorGolDePenal(nullable: true, max: Integer.MAX_VALUE);
+		valorPorPenalErrado(nullable: true, max: Integer.MAX_VALUE);
+		valorPorPenalAtajado(nullable: true, max: Integer.MAX_VALUE);
+		valorPorGolRecibido(nullable: true, max: Integer.MAX_VALUE);
+		valorPorVallaInvicta(nullable: true, max: Integer.MAX_VALUE);
+		valorPorAmonestacion(nullable: true, max: Integer.MAX_VALUE);
+		valorPorExpulsion(nullable: true, max: Integer.MAX_VALUE);
+		valorPorChenemigo(nullable: true, max: Integer.MAX_VALUE);
+		valorPorFigura(nullable: true, max: Integer.MAX_VALUE);
     }
 
 	Integer valorPorGolAfavor;

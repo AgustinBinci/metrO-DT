@@ -49,7 +49,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;${session.user.nombre} ${session.user.apellido} <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><g:link controller="usuario" action="show" params="[id: session?.user?.getId()]">Ver datos</g:link></li>
+								<li><g:link controller="usuario" action="show">Ver datos</g:link></li>
 								<li><g:link controller="usuario" action="cambiarContrasenia">Cambiar contraseña</g:link></li>
 								<li><g:link controller="usuario" action="logout" params="[id: session?.user?.getId()]"><g:message code="default.logout"/></g:link></li>
 							</ul>
@@ -79,7 +79,9 @@
 
     <g:layoutBody/>
 
-    <div class="footer" role="contentinfo"></div>
+    <div id="footer">
+
+    </div>
 
     <div id="spinner" class="spinner" style="display:none;">
         <g:message code="spinner.alt" default="Loading&hellip;"/>

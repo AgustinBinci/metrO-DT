@@ -3,14 +3,14 @@ package workspacegrails
 class DatosDeUnaFecha implements Comparable{
 
     static constraints = {
-		fecha(nullable: true, min: 1, max: 99999999999);
-		puntajeDelDiario(nullable: true, min: 0, max: 99999999999);
-		golesAfavor(nullable: true, min: 0, max: 99999999999);
-		golesEnContra(nullable: true, min: 0, max: 99999999999);
-		golesDePenal(nullable: true, min: 0, max: 99999999999);
-		penalesErrados(nullable: true, min: 0, max: 99999999999);
-		penalesAtajados(nullable: true, min: 0, max: 99999999999);
-		golesRecibidos(nullable: true, min: 0, max: 99999999999);
+		fecha(nullable: true, min: 1, max: Integer.MAX_VALUE);
+		puntajeDelDiario(nullable: true, min: 0, max: Float.MAX_VALUE);
+		golesAfavor(nullable: true, min: 0, max: Integer.MAX_VALUE);
+		golesEnContra(nullable: true, min: 0, max: Integer.MAX_VALUE);
+		golesDePenal(nullable: true, min: 0, max: Integer.MAX_VALUE);
+		penalesErrados(nullable: true, min: 0, max: Integer.MAX_VALUE);
+		penalesAtajados(nullable: true, min: 0, max: Integer.MAX_VALUE);
+		golesRecibidos(nullable: true, min: 0, max: Integer.MAX_VALUE);
 		amonestado(nullable: true);
 		expulsado(nullable: true);
 		chenemigo(nullable: true);

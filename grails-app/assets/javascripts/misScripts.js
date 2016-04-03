@@ -4,29 +4,35 @@ window.onload = function() {
 //***********************************************************************************FUNCIONES************************************************************************************
 //********************************************************************************************************************************************************************************
 
+	//Funcion para remover clases del input
+	function removerClasesDeControlDelDivInput(divInput) {
+		divInput.removeClass("has-error has-success");
+	}
+
+	//Funcion para remover clases del input
+	function removerIconosDelSpan(span) {
+		span.removeClass("glyphicon-ok glyphicon-remove");
+	}
+
 	//Funcion para activar casilla de error.
 	//Pre: recibe por parametro los elementos a utilizar.
 	function activarError(divInput, span, status) {
-		divInput.removeClass("has-error");
-		divInput.removeClass("has-success");
+		removerClasesDeControlDelDivInput(divInput);
 		divInput.addClass("has-error");
 
-		span.removeClass("glyphicon-ok");
-		span.removeClass("glyphicon-remove");
+		removerIconosDelSpan(span);
 		span.addClass("glyphicon-remove");
-
+	
 		status.val("(error)");
 	}
 
 	//Funcion para activar casilla de exitoso.
 	//Pre: idem activarError.
 	function activarExito(divInput, span, status) {
-		divInput.removeClass("has-error");
-		divInput.removeClass("has-success");
+		removerClasesDeControlDelDivInput(divInput);
 		divInput.addClass("has-success");
 
-		span.removeClass("glyphicon-ok");
-		span.removeClass("glyphicon-remove");
+		removerIconosDelSpan(span);
 		span.addClass("glyphicon-ok");
 
 		status.val("(success)");
@@ -49,8 +55,10 @@ window.onload = function() {
 			else	{
 				span = $('<span/>');
 				span.addClass("glyphicon glyphicon-asterisk asterisco");
-				elemento.parent().prev().append(" ");
+				var texto = elemento.parent().prev().text();
+				elemento.parent().prev().text("");
 				elemento.parent().prev().append(span);
+				elemento.parent().prev().append(" " + texto);
 			}
 		}
 	}
@@ -122,6 +130,29 @@ window.onload = function() {
 		}
 	}
 
+
+	//Funcion para validar contraseñas
+	function validarContraseñas(elemento) {
+		var id = elemento.attr("id");
+
+		if (id != null && id == "contraseniaRepetidaInput") {
+			var contraseniaRepetida = elemento.val();
+			var contraseniaIngresada = $("#contraseniaInput").val();
+
+			if ( (contraseniaRepetida != null) && (contraseniaIngresada != null) && (contraseniaRepetida == contraseniaIngresada) )
+				activarExito(elemento.parent(), elemento.next(), elemento.next().next());
+			else activarError(elemento.parent(), elemento.next(), elemento.next().next());
+		}
+	}
+
+	//Funcion para generalizar llamado a funciones
+	function validar(elemento) {
+		validarCampoRequerido(elemento);
+		validarLongitud(elemento);
+		validarMaximosYminimos(elemento);
+		validarExpresionRegular(elemento);
+	}
+
 //********************************************************************************************************************************************************************************
 //**************************************************************************************CODIGO************************************************************************************
 //********************************************************************************************************************************************************************************
@@ -136,10 +167,7 @@ window.onload = function() {
 
 			//Llamado a funciones
 			agregarAsteriscoSiCorresponde(elemento);
-			validarCampoRequerido(elemento);
-			validarLongitud(elemento);
-			validarMaximosYminimos(elemento);
-			validarExpresionRegular(elemento);
+			validar(elemento);
 		});
 
 		//En algun cambio en el campo
@@ -148,10 +176,16 @@ window.onload = function() {
 			var elemento = $(this);
 
 			//Llamado a funciones
-			validarCampoRequerido(elemento);
-			validarLongitud(elemento);
-			validarMaximosYminimos(elemento);
-			validarExpresionRegular(elemento);
+			validar(elemento);
+			validarContraseñas(elemento);
+		});
+
+		$("#crearUsuario").on("click", function(event) {
+			var contraseniaIngresada = $("#contraseniaInput").val();
+			var contraseniaRepetida = $("#contraseniaRepetidaInput").val();
+
+			if ( (contraseniaRepetida != null) && (contraseniaIngresada != null) && (contraseniaRepetida != contraseniaIngresada) ) 
+				event.preventDefault();
 		});
 
 	}

@@ -7,7 +7,7 @@ class Jugador {
     static constraints = {
 		datosDelasFechas(nullable: true);
 		nombre(nullable: true, blank: false, size: 1..50);
-		precio(nullable: true);
+		precio(nullable: true, min: 0, max: Integer.MAX_VALUE);
 		club(nullable: true);
 		posicion(nullable: true);
     }
