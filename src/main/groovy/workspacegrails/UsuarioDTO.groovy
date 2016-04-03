@@ -1,6 +1,6 @@
 package workspacegrails
 
-public class UsuarioIndex {
+public class UsuarioDTO {
 
 	def id;
 	String nombre;

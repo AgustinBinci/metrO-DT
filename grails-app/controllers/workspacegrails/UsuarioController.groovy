@@ -7,19 +7,21 @@ class UsuarioController extends GeneralController{
 	static transactional = true;
 	def coleccionesService;
 	def encriptadorService;
+	def modelMapper;
 
 	def index() {
 		try {
 			def usuarios = Usuario.list();
-			List<UsuarioIndex> usuariosIndex = new ArrayList<>();
+			List<UsuarioDTO> usuariosIndex = new ArrayList<>();
 
 			for (Usuario unUsuario : usuarios) {
-				UsuarioIndex unUsuarioIndex = new UsuarioIndex();
-				unUsuarioIndex.setId(unUsuario.getId());
+				//Mapeo usuario
+				UsuarioDTO unUsuarioIndex = modelMapper.map(unUsuario, UsuarioDTO.class);
+				/*unUsuarioIndex.setId(unUsuario.getId());
 				unUsuarioIndex.setNombre(unUsuario.getNombre());
 				unUsuarioIndex.setApellido(unUsuario.getApellido());
 				unUsuarioIndex.setNombreDelEquipo(unUsuario.getNombreDelEquipo());
-				unUsuarioIndex.setAdmin(unUsuario.getAdmin());
+				unUsuarioIndex.setAdmin(unUsuario.getAdmin());*/
 
 				usuariosIndex.add(unUsuarioIndex);
 			}
@@ -124,13 +126,13 @@ class UsuarioController extends GeneralController{
 		try {
 			Usuario unUsuario = Usuario.findById(session.user.getId());
 			if (unUsuario) {
-				//Usuario edit
-				UsuarioEdit unUsuarioEdit = new UsuarioEdit();
-				unUsuarioEdit.setId(unUsuario.getId());
+				//Mapeo usuario
+				UsuarioDTO unUsuarioEdit = modelMapper.map(unUsuario, UsuarioDTOextendido.class);
+				/*unUsuarioEdit.setId(unUsuario.getId());
 				unUsuarioEdit.setNombre(unUsuario.getNombre());
 				unUsuarioEdit.setNombreDelEquipo(unUsuario.getNombreDelEquipo());
 				unUsuarioEdit.setApellido(unUsuario.getApellido());
-				unUsuarioEdit.setEmail(unUsuario.getEmail());
+				unUsuarioEdit.setEmail(unUsuario.getEmail());*/
 				return render(view:'show', model: [usuario: unUsuarioEdit]);
 			}
 			else {
@@ -186,13 +188,13 @@ class UsuarioController extends GeneralController{
 					return chain(action: "index");
 				}
 				else {
-					//Creo usuario para la vista
-					UsuarioEdit unUsuarioEdit = new UsuarioEdit();
-					unUsuarioEdit.setId(unUsuario.getId());
+					//Mapero usuario
+					UsuarioDTO unUsuarioEdit = modelMapper.map(unUsuario, UsuarioDTOextendido.class);
+					/*unUsuarioEdit.setId(unUsuario.getId());
 					unUsuarioEdit.setNombre(unUsuario.getNombre());
-					unUsuarioEdit.setApellido(unUsuario.getApellido());
 					unUsuarioEdit.setNombreDelEquipo(unUsuario.getNombreDelEquipo());
-					unUsuarioEdit.setEmail(unUsuario.getEmail());
+					unUsuarioEdit.setApellido(unUsuario.getApellido());
+					unUsuarioEdit.setEmail(unUsuario.getEmail());*/
 
 					return render(view:'edit', model:[usuario:unUsuarioEdit]);
 				}
