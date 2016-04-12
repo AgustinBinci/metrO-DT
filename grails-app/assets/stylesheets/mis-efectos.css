@@ -3,6 +3,12 @@ header {
 	color:#ffffff;
 }
 
+body {
+	background-image: url("../images/futbol.jpg");
+	background-attachment: fixed;
+	background-position: center center;
+}
+
 .asterisco {
 	color: #B93434;
 }
