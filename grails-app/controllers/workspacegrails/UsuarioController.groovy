@@ -5,9 +5,13 @@ import grails.transaction.Transactional
 class UsuarioController extends GeneralController{
 
 	static transactional = true;
-	def coleccionesService;
+
 	def encriptadorService;
+	def usuarioService;
+	def guardadoService;
 	def modelMapper;
+	def validadorDeUsuarioService;
+	def ValidadorDeContraseniaService;
 
 	def index() {
 		try {
@@ -17,11 +21,6 @@ class UsuarioController extends GeneralController{
 			for (Usuario unUsuario : usuarios) {
 				//Mapeo usuario
 				UsuarioDTO unUsuarioIndex = modelMapper.map(unUsuario, UsuarioDTO.class);
-				/*unUsuarioIndex.setId(unUsuario.getId());
-				unUsuarioIndex.setNombre(unUsuario.getNombre());
-				unUsuarioIndex.setApellido(unUsuario.getApellido());
-				unUsuarioIndex.setNombreDelEquipo(unUsuario.getNombreDelEquipo());
-				unUsuarioIndex.setAdmin(unUsuario.getAdmin());*/
 
 				usuariosIndex.add(unUsuarioIndex);
 			}
@@ -39,7 +38,7 @@ class UsuarioController extends GeneralController{
 				Usuario unUsuario = Usuario.findByEmailAndContrasenia(params.email, encriptadorService.getSha256De(params.contrasenia));	
 				if (unUsuario) {
 					session.user = unUsuario;
-					return redirect(uri: "/");
+					return chain(controller: "home", action: "index");
 				}
 				else {
 					flash.errorMessage = "El usuario y contrasenia ingresados no coinciden con ningun usuario registrado";			
@@ -47,7 +46,7 @@ class UsuarioController extends GeneralController{
 				}
 			}
 			else {
-				if (!flash.message) flash.message = "Ingrese sus datos";
+				if (!flash.message && !flash.errorMessage) flash.message = "Ingrese sus datos";
 				return render(view: "login");
 			}
 		}
@@ -62,10 +61,9 @@ class UsuarioController extends GeneralController{
 			Usuario unUsuario = Usuario.findById(session.user.getId());
 			if (unUsuario) {
 				session.user = null;
-				flash.message = "Adios ${unUsuario.getNombre()}";
-				return chain(action: "login");
+				return redirect(action: "login");
 			}
-			else return redirect(uri:"/");
+			else return chain(controller: "home", action: "index");
 		}
 		catch(Exception unaExcepcion) {
 			flash.errorMessage = unaExcepcion.getMessage();
@@ -75,45 +73,34 @@ class UsuarioController extends GeneralController{
 
 	def create() {
 		try {
-			def parametros = [nombre: params.nombre, apellido: params.apellido, email: params.email, nombreDelEquipo: params.nombreDelEquipo];
-			def mensajes = [:];
+			//GET
+			if (request.method == "GET") {
+				flash.message = "Ingresa tus datos";
+				return render(view: "create", model: []);	
+			}
 
-			if (params.nombre && params.apellido && params.contrasenia && params.contraseniaRepetida && params.email && params.nombreDelEquipo) {
+			//POST
+			else {
+				def parametros = [nombre: params.nombre, apellido: params.apellido, email: params.email, nombreDelEquipo: params.nombreDelEquipo];
+				def mensajes = [:];
+
+				List<String> errores = validadorDeUsuarioService.getErroresDeValidacion(params);
 
 				//Chequeo email repetido
 				Usuario usuarioExistente = Usuario.findByEmail(params.email);
+				if (usuarioExistente) errores.add("Ya existe un usuario con ese email");
 
-				if (!usuarioExistente) {
-		
-					if (params.contrasenia == params.contraseniaRepetida) {
-						//Instancio opciones del juego
-						OpcionesDelJuego opcionesDelJuego = OpcionesDelJuego.getAll().get(0);
-
-						//Creo el usuario
-						Usuario unUsuario = new Usuario(nombre: params.nombre, apellido: params.apellido, contrasenia: encriptadorService.getSha256De(params.contrasenia),
-													email: params.email, nombreDelEquipo: params.nombreDelEquipo, admin: false,
-													presupuesto: opcionesDelJuego.getPresupuestoInicial(), cambiosGranDt: opcionesDelJuego.getCambiosGranDtIniciales(), 												cambiosInternos: opcionesDelJuego.getCambiosInternosIniciales(),
-													cambiosDeSuplente: opcionesDelJuego.getCambiosDeSuplenteIniciales());
-	
-						//Guardo usuario
-						this.guardarUsuario(unUsuario);
-						return chain(action: "login", params: mensajes);
-					}
-					else {
-						flash.errorMessage = "Las contraseñas ingresadas no coinciden!";
-						return render(view: "create", model: parametros);	
-					}	
+				if (errores.isEmpty()) {
+					this.crearYguardarUsuario(params);
+					return chain(action: "login", params: mensajes);
 				}
 				else {
-					parametros["email"] = null;
-					flash.errorMessage = "Ya existe un usuario con ese email!";
-					return render(view: "create", model: parametros);			
+					for (String unError : errores) {
+						if (!flash.errorMessage) flash.errorMessage = unError;
+						else flash.errorMessage += ", " + unError;
+					}
+					return render(view: "create", model: parametros);	
 				}
-
-			}
-			else {
-				if (!flash.message) flash.message = "Ingresa tus datos!";
-				return render(view: "create", model: parametros);
 			}
 		}
 		catch(Exception unaExcepcion) {
@@ -128,11 +115,7 @@ class UsuarioController extends GeneralController{
 			if (unUsuario) {
 				//Mapeo usuario
 				UsuarioDTO unUsuarioEdit = modelMapper.map(unUsuario, UsuarioDTOextendido.class);
-				/*unUsuarioEdit.setId(unUsuario.getId());
-				unUsuarioEdit.setNombre(unUsuario.getNombre());
-				unUsuarioEdit.setNombreDelEquipo(unUsuario.getNombreDelEquipo());
-				unUsuarioEdit.setApellido(unUsuario.getApellido());
-				unUsuarioEdit.setEmail(unUsuario.getEmail());*/
+
 				return render(view:'show', model: [usuario: unUsuarioEdit]);
 			}
 			else {
@@ -149,23 +132,35 @@ class UsuarioController extends GeneralController{
 	
 	def cambiarContrasenia() {
 		try {
-			def parametros = [:];
-			if (params.contraseniaActual && params.nuevaContrasenia) {
-				Usuario unUsuario = Usuario.findByIdAndContrasenia(session.user.getId(), encriptadorService.getSha256De(params.contraseniaActual));
-				if (unUsuario) {
+			//GET
+			if (request.method == "GET") return render(view: "cambiarContrasenia", model: []);
+
+			//POST
+			else {
+				Usuario unUsuario = Usuario.findById(session.user.getId());
+				params.contraseniaEncriptada = unUsuario.getContrasenia();
+				params.contraseniaActualEncriptada = encriptadorService.getSha256De(params.contraseniaActual);
+
+				List<String> errores = validadorDeContraseniaService.getErroresDeValidacion(params);
+
+				if (errores.isEmpty()) {
 					unUsuario.setContrasenia(encriptadorService.getSha256De(params.nuevaContrasenia));
-					if (unUsuario.save(flush: true)) flash.message = "Contraseña actualizada correctamente";
+
+					if (usuarioService.guardar(unUsuario)) flash.message = "Contraseña actualizada correctamente";
 					else flash.errorMessage = "Error al cambiar la contraseña";
+
 					return chain(action: "show");
 				}
-				else flash.errorMessage = "La contraseña actual no coincide";
+				else {
+					for (String unError : errores) {
+						if (!flash.errorMessage) flash.errorMessage = unError;
+						else flash.errorMessage += ", " + unError;
+					}
+
+					return render(view: "cambiarContrasenia", model: []);
+				}
+
 			}
-			else {
-				parametros["contraseniaActual"] = params.contraseniaActual;
-				parametros["nuevaContrasenia"] = params.nuevaContrasenia;
-				flash.errorMessage = "Se deben completar todos los campos";
-			}
-			return render(view: "cambiarContrasenia", model: parametros);
 		}
 		catch(Exception unaExcepcion) {
 			flash.errorMessage = unaExcepcion.getMessage();
@@ -177,27 +172,32 @@ class UsuarioController extends GeneralController{
 		try {
 			Usuario unUsuario = Usuario.findById(session.user.getId());
 			if (unUsuario) {
-				if (params.nombre && params.apellido && params.email && params.nombreDelEquipo) {
-					unUsuario.setNombre(params.nombre);
-					unUsuario.setApellido(params.apellido);
-					unUsuario.setEmail(params.email);
-					unUsuario.setNombreDelEquipo(params.nombreDelEquipo);
+				//Mapero usuario
+				UsuarioDTO unUsuarioEdit = modelMapper.map(unUsuario, UsuarioDTOextendido.class);
 
-					if (unUsuario.save(flush: true)) flash.message = "Usuario editado correctamente";
-					else flash.errorMessage = "Error al editar usuario";
-					return chain(action: "index");
-				}
+				//GET
+				if (request.method == "GET") return render(view:'edit', model:[usuario:unUsuarioEdit]);
+
+				//POST
 				else {
-					//Mapero usuario
-					UsuarioDTO unUsuarioEdit = modelMapper.map(unUsuario, UsuarioDTOextendido.class);
-					/*unUsuarioEdit.setId(unUsuario.getId());
-					unUsuarioEdit.setNombre(unUsuario.getNombre());
-					unUsuarioEdit.setNombreDelEquipo(unUsuario.getNombreDelEquipo());
-					unUsuarioEdit.setApellido(unUsuario.getApellido());
-					unUsuarioEdit.setEmail(unUsuario.getEmail());*/
+					List<String> errores = validadorDeUsuarioService.getErroresDeValidacion(params);
 
-					return render(view:'edit', model:[usuario:unUsuarioEdit]);
+					if (unUsuario.getEmail() != params.email && Usuario.findByEmail(params.email)) errores.add("Ya existe un usuario con ese email");
+
+					if (errores.isEmpty()) {
+						if (usuarioService.guardar(unUsuario)) flash.message = "Usuario actualizado correctamente";
+						else flash.errorMessage = "Error al actualizar el usuario";
+						return chain(action: "show");
+					}
+					else {
+						for (String unError : errores) {
+							if (!flash.errorMessage) flash.errorMessage = unError;
+							else flash.errorMessage += ", " + unError;
+						}
+						return render(view: 'edit', model: [usuario: unUsuarioEdit]);
+					}
 				}
+
 			}
 			else {
 				flash.errorMessage = "Error inesperado";
@@ -229,6 +229,7 @@ class UsuarioController extends GeneralController{
 		}
 	}
 
+	@Transactional
 	def delete() {
 		try {
 			if (params.id) {
@@ -236,18 +237,27 @@ class UsuarioController extends GeneralController{
 				if (unUsuario) {
 					if( (session.user.getId() == unUsuario.getId()) || (session.user.getAdmin()) ) {
 						if(session.user.getId() == unUsuario.getId()) session.user = null;
-						def equipos = unUsuario.getEquipos();
-						coleccionesService.eliminarObjetosDeColeccion(equipos);
-						unUsuario.delete();
-						if (!unUsuario) flash.message = "Usuario eliminado correctamente";
-						else flash.errorMessage = "Error al eliminar el usuario";
+						if (usuarioService.eliminar(unUsuario)) {
+							flash.message = "Usuario eliminado correctamente";
+							if (session.user) return chain(action: "index");
+							else return chain(controller: "home", action: "index");
+						}
+						else {
+							flash.errorMessage = "Error al eliminar el usuario";
+							return chain(action: "index");
+						}
 					}
-				
+					else {
+						flash.errorMessage = "No tenes los permisos para eliminar este usuario";
+						return chain(action: "index");
+					}
 				}
-				else flash.errorMessage = "No existe ningun usuario con ese identificador";
+				else {
+					flash.errorMessage = "No existe ningun usuario con ese identificador";
+					return chain(action: "index");
+				}
 			}
-			flash.errorMessage = "No tenes los permisos para eliminar este usuario";
-			return chain(action: "index");
+			else return chain(action: "index");
 		}
 		catch(Exception unaExcepcion) {
 			flash.errorMessage = unaExcepcion.getMessage();
@@ -256,18 +266,28 @@ class UsuarioController extends GeneralController{
 	}
 
 	@Transactional
-	private def guardarUsuario(Usuario unUsuario) {
+	private def crearYguardarUsuario(def params) {
 		try {
+			//Instancio opciones del juego
+			OpcionesDelJuego opcionesDelJuego = OpcionesDelJuego.getAll().get(0);
+
+			//Creo el usuario
+			Usuario unUsuario = new Usuario(nombre: params.nombre, apellido: params.apellido, contrasenia: encriptadorService.getSha256De(params.contrasenia),
+										email: params.email, nombreDelEquipo: params.nombreDelEquipo, admin: false,
+										presupuesto: opcionesDelJuego.getPresupuestoInicial(), cambiosGranDt: opcionesDelJuego.getCambiosGranDtIniciales(), 												cambiosInternos: opcionesDelJuego.getCambiosInternosIniciales(),
+										cambiosDeSuplente: opcionesDelJuego.getCambiosDeSuplenteIniciales());
+
+			//Formacion y equipo
 			Formacion unaFormacion = Formacion.findByCantidadDeDefensoresAndCantidadDeVolantesAndCantidadDeDelanteros(4, 4, 2);
 			EquipoDeUnaFecha unEquipo = new EquipoDeUnaFecha(fecha: FechaActual.first().getNumeroDeFecha(), formacion: unaFormacion);
 
-			if (unEquipo.save()) {
+			if (guardadoService.guardar(unEquipo)) {
 				unUsuario.addToEquipos(unEquipo);
-				if (unUsuario.save(flush: true)) {
+				if (usuarioService.guardar(unUsuario)) {
 					Torneo torneoPrincipal = Torneo.findByTorneoPrincipal(true);
 					if (torneoPrincipal) {
-						torneoPrincipal.addToParticipantes(unUsuario);
-						torneoPrincipal.save();
+						//torneoPrincipal.addToParticipantes(unUsuario);
+						//guardadoService.guardar(torneoPrincipal);
 					}
 					flash.message = "Usuario creado!";
 				}

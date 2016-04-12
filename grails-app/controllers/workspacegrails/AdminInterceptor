@@ -19,7 +19,7 @@ class AdminInterceptor extends GeneralInterceptor {
 			if (session.user.getAdmin()) return true;
 			else {
 			  flash.errorMessage = "No tenés permisos para acceder a esa pagina";
-			  chain(uri: "/");
+			  chain(controller: "home", action: "index");
 			  return false;
 			}
 		}

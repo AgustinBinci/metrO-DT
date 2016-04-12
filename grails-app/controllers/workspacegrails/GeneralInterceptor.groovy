@@ -9,7 +9,6 @@ class GeneralInterceptor {
 	    match(controller: "club");
 	    match(controller: "jugador");
 	    match(controller: "equipoDeUnaFecha");
-	    match(controller: "error");
 	    match(controller: "usuario", action: "edit");
 	    match(controller: "usuario", action: "index");
 	    match(controller: "usuario", action: "show");
@@ -18,6 +17,8 @@ class GeneralInterceptor {
 	    match(controller: "usuario", action: "delete");
 	    match(controller: "usuario", action: "guardarUsuario");
 	    match(controller: "usuario", action: "logout");
+		match(uri: "/usuario");
+		match(uri: "/usuario/");
     }
 
 	protected Boolean validarSesion() {

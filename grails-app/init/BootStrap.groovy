@@ -64,8 +64,8 @@ class BootStrap {
 	user.save(failOnError: true);
 
 	//Criterios de seleccion
-	CriterioDeSeleccion random = new Aleatoria();
-	random.save(failOnError: true);
+	//CriterioDeSeleccion random = new Aleatoria();
+	//random.save(failOnError: true);
 
 	//Cambios a eleccion
 	CambioAeleccion cambioAeleccion = new CambioAeleccion(cambioInterno: true, cambioGranDt: false, cambioDeSuplentes: true);
@@ -82,8 +82,8 @@ class BootStrap {
 	//Tipos de torneo
 	Liga liga = new Liga(nombre: "Torneo gape el trOme", fechaDeInicio: 1, fechaDeFin: 99999, porcentajeDeParticipantes: 100, torneoPrincipal: true, fechaActual: unaFecha, 
 						premioPorFechaGanada: premioPorFechaGanada, premioPorTorneoPerdido: premioPorTorneoPerdido);
-	liga.addToParticipantes(admin);
-	liga.addToParticipantes(user);
+	//liga.addToParticipantes(admin);
+	//liga.addToParticipantes(user);
 	liga.save(failOnError: true);
 
     }

@@ -3596,7 +3596,7 @@ tbody.collapse.in {
 .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #337ab7;
+  background-color: black;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,
@@ -4648,7 +4648,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #080808;
+  background-color: black;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -4695,7 +4695,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #fff;
-    background-color: #080808;
+    background-color: black;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -5101,7 +5101,7 @@ a.thumbnail.active {
 }
 .alert-info {
   color: #bce8f1;
-  background-color: transparent;
+  background-color: rgba(188, 232, 241, 0.1);
   border-color: #bce8f1;
 }
 .alert-info hr {
@@ -5124,7 +5124,7 @@ a.thumbnail.active {
 }
 .alert-danger {
   color: #FE8E8E;
-  background-color: transparent;
+  background-color: rgba(254, 142, 142, 0.1);
   border-color: #FE8E8E;
 }
 .alert-danger hr {

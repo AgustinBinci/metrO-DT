@@ -157,6 +157,30 @@ window.onload = function() {
 //**************************************************************************************CODIGO************************************************************************************
 //********************************************************************************************************************************************************************************
 
+	//Marcar activa la seccion actual
+	var paginaActual = window.location.pathname;
+	var elementoActual;
+
+	$("ul.navbar-nav li").each(function() {
+		var unLink = $(this).children();
+
+		//Chequeo si es la pagina actual
+		if (unLink.attr("href") == paginaActual) {
+			$(this).addClass("active");
+			elementoActual = $(this);
+		}
+		else $(this).removeClass("active");
+	});
+
+	$("li.dropdown").each(function() {
+		var dropDown = $(this);
+		var menu = $(this).find("ul.dropdown-menu");
+
+		if (menu.length && menu.find(elementoActual).length) dropDown.addClass("active");
+		
+		else dropDown.removeClass("active");
+	});
+
 	//Exito y error en formularios
 	if ( $(".form-control").length ) {
 
@@ -180,7 +204,7 @@ window.onload = function() {
 			validarContraseñas(elemento);
 		});
 
-		$("#crearUsuario").on("click", function(event) {
+		$("#guardarUsuario").on("click", function(event) {
 			var contraseniaIngresada = $("#contraseniaInput").val();
 			var contraseniaRepetida = $("#contraseniaRepetidaInput").val();
 

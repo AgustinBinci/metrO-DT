@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -32,8 +32,8 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
+					<li><a href="/"><g:message code="default.home"/></a></li>
 					<g:if test="${session?.user}">
-						<li><a href="/"><g:message code="default.home"/></a></li>
 						<li><g:link controller="opcionesDelJuego" action="show">Opciones generales del juego</g:link></li>
 			 			<li><g:link controller="club" action="index" >Clubes</g:link></li>
 						<li><g:link controller="usuario" action="index">Participantes</g:link></li>
@@ -50,6 +50,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;${session.user.nombre} ${session.user.apellido} <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><g:link controller="usuario" action="show">Ver datos</g:link></li>
+								<li><g:link controller="usuario" action="edit">Editar datos</g:link></li>
 								<li><g:link controller="usuario" action="cambiarContrasenia">Cambiar contraseña</g:link></li>
 								<li><g:link controller="usuario" action="logout" params="[id: session?.user?.getId()]"><g:message code="default.logout"/></g:link></li>
 							</ul>
@@ -64,18 +65,22 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-    <g:if test="${flash.message}">
-		<div class="alert alert-info alert-dismissible container" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<span class="glyphicon glyphicon-info-sign"></span>&nbsp;<strong>Info!</strong> ${flash.message}
+    <g:if test="${flash.errorMessage}">
+		<div class="col col-md-12">
+			<div class="alert alert-danger alert-dismissible container" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<span class="glyphicon glyphicon-alert"></span>&nbsp;<strong>Error!</strong> ${flash.errorMessage}
+			</div>
 		</div>
     </g:if>
-    <g:if test="${flash.errorMessage}">
-		<div class="alert alert-danger alert-dismissible container" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<span class="glyphicon glyphicon-alert"></span>&nbsp;<strong>Error!</strong> ${flash.errorMessage}
+    <g:if test="${flash.message}">
+		<div class="col col-md-12">
+			<div class="alert alert-info alert-dismissible container" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<span class="glyphicon glyphicon-info-sign"></span>&nbsp;<strong>Info!</strong> ${flash.message}
+			</div>
 		</div>
-    </g:if>	
+    </g:if>
 
     <g:layoutBody/>
 
