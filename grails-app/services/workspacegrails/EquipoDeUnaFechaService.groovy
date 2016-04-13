@@ -2,7 +2,14 @@ package workspacegrails
 
 import grails.transaction.Transactional
 
-class EquipoDeUnaFechaService {
+class EquipoDeUnaFechaService extends Servicio{
+
+	@Transactional
+	@Override
+	public def crear(def params) {
+		return new EquipoDeUnaFecha();
+	}
+
 
 	@Transactional
     boolean eliminarJugadorDelEquipo(JugadorSeleccionado unJugador, EquipoDeUnaFecha unEquipo) {

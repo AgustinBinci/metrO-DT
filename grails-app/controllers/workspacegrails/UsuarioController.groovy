@@ -8,10 +8,10 @@ class UsuarioController extends GeneralController{
 
 	def encriptadorService;
 	def usuarioService;
-	def guardadoService;
+	def equipoDeUnaFechaService;
 	def modelMapper;
 	def validadorDeUsuarioService;
-	def ValidadorDeContraseniaService;
+	def validadorDeContraseniaService;
 
 	def index() {
 		try {
@@ -281,7 +281,7 @@ class UsuarioController extends GeneralController{
 			Formacion unaFormacion = Formacion.findByCantidadDeDefensoresAndCantidadDeVolantesAndCantidadDeDelanteros(4, 4, 2);
 			EquipoDeUnaFecha unEquipo = new EquipoDeUnaFecha(fecha: FechaActual.first().getNumeroDeFecha(), formacion: unaFormacion);
 
-			if (guardadoService.guardar(unEquipo)) {
+			if (equipoDeUnaFechaService.guardar(unEquipo)) {
 				unUsuario.addToEquipos(unEquipo);
 				if (usuarioService.guardar(unUsuario)) {
 					Torneo torneoPrincipal = Torneo.findByTorneoPrincipal(true);
