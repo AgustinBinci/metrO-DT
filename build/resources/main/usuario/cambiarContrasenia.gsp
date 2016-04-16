@@ -10,10 +10,12 @@
 			<br/><br/>
 
 		    <div class="container">
-			    <g:form action="cambiarContrasenia" role="form">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
 
-					<div class="form-group row">
-						<div class="col-md-4">
+				    <g:form action="cambiarContrasenia" role="form">
+
+						<div class="form-group row">
 
 							<div class="has-success has-feedback">
 								<input class="form-control input-lg" type="password" name="contraseniaActual" maxlength="50" placeholder="Contraseña actual..." id="contraseniaActualInput" value="${contraseniaActual}" required autofocus>
@@ -22,10 +24,8 @@
 							</div>
 				
 						</div>
-					</div>
 
-					<div class="form-group row">
-						<div class="col-md-4">
+						<div class="form-group row">
 
 							<div class="has-success has-feedback">
 								<input class="form-control input-lg" type="password" name="nuevaContrasenia" maxlength="50" placeholder="Nueva contraseña..." id="contraseniaInput" value="${nuevaContrasenia}" required>
@@ -34,10 +34,8 @@
 							</div>
 
 						</div>
-					</div>
 
-					<div class="form-group row">
-						<div class="col-md-4">
+						<div class="form-group row">
 
 							<div class="has-success has-feedback">
 								<input class="form-control input-lg" type="password" name="nuevaContraseniaRepetida" maxlength="50" placeholder="Confirmar nueva contraseña..." id="contraseniaRepetidaInput" value="${nuevaContraseniaRepetida}" required>
@@ -46,16 +44,15 @@
 							</div>
 
 						</div>
-					</div>
 
-					<div class="form-group row">
-						<div class="col-md-4">
+						<div class="form-group row">
 							<input type="submit" id="guardarUsuario" class="btn btn-danger btn-lg col-md-12" value="${message(code: 'default.save')}" align="center" style="font-weight: bold;">
 						</div>
-					</div>
 
-			    </g:form>
-		    </div>
+				    </g:form>
+			    </div>
+				<div class="col-md-4"></div>
+			</div>
 
         </div>
     </body>

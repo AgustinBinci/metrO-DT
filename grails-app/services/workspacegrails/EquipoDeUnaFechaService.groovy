@@ -2,13 +2,26 @@ package workspacegrails
 
 import grails.transaction.Transactional
 
-class EquipoDeUnaFechaService extends Servicio{
+class EquipoDeUnaFechaService extends Servicio {
 
 	@Transactional
 	@Override
-	public def crear(def params) {
-		return new EquipoDeUnaFecha();
+	public def crear() {
+		try {
+			EquipoDeUnaFecha equipoDeUnaFecha = new EquipoDeUnaFecha();
+
+			equipoDeUnaFecha.setFecha(FechaActual.first().getNumeroDeFecha());
+			equipoDeUnaFecha.setFormacion(Formacion.findByCantidadDeDefensoresAndCantidadDeVolantesAndCantidadDeDelanteros(4, 4, 2));
+
+			return equipoDeUnaFecha;
+		}
+		catch(Exception unaExcepcion) {
+			throw unaExcepcion;
+		}
 	}
+
+	@Override
+	public void setAtributos(def unObjeto, def params) {}
 
 
 	@Transactional

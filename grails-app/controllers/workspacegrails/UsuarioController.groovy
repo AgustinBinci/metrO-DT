@@ -11,6 +11,7 @@ class UsuarioController extends GeneralController{
 	def equipoDeUnaFechaService;
 	def modelMapper;
 	def validadorDeUsuarioService;
+	def validadorDeNuevaContraseniaService;
 	def validadorDeContraseniaService;
 
 	def index() {
@@ -85,13 +86,19 @@ class UsuarioController extends GeneralController{
 				def mensajes = [:];
 
 				List<String> errores = validadorDeUsuarioService.getErroresDeValidacion(params);
+				errores.addAll(validadorDeNuevaContraseniaService.getErroresDeValidacion(params));
 
 				//Chequeo email repetido
 				Usuario usuarioExistente = Usuario.findByEmail(params.email);
 				if (usuarioExistente) errores.add("Ya existe un usuario con ese email");
 
 				if (errores.isEmpty()) {
-					this.crearYguardarUsuario(params);
+					Usuario unUsuario = usuarioService.crear();
+					usuarioService.setAtributos(unUsuario, params);
+
+					if (usuarioService.guardar(unUsuario)) flash.message = "Usuario creado correctamente";
+					else flash.errorMessage = "Error al crear el usuario";
+
 					return chain(action: "login", params: mensajes);
 				}
 				else {
@@ -144,7 +151,7 @@ class UsuarioController extends GeneralController{
 				List<String> errores = validadorDeContraseniaService.getErroresDeValidacion(params);
 
 				if (errores.isEmpty()) {
-					unUsuario.setContrasenia(encriptadorService.getSha256De(params.nuevaContrasenia));
+					usuarioService.setAtributos(unUsuario, [contrasenia: params.nuevaContrasenia]);
 
 					if (usuarioService.guardar(unUsuario)) flash.message = "Contraseña actualizada correctamente";
 					else flash.errorMessage = "Error al cambiar la contraseña";
@@ -185,6 +192,8 @@ class UsuarioController extends GeneralController{
 					if (unUsuario.getEmail() != params.email && Usuario.findByEmail(params.email)) errores.add("Ya existe un usuario con ese email");
 
 					if (errores.isEmpty()) {
+						usuarioService.setAtributos(unUsuario, params);
+
 						if (usuarioService.guardar(unUsuario)) flash.message = "Usuario actualizado correctamente";
 						else flash.errorMessage = "Error al actualizar el usuario";
 						return chain(action: "show");
@@ -262,42 +271,6 @@ class UsuarioController extends GeneralController{
 		catch(Exception unaExcepcion) {
 			flash.errorMessage = unaExcepcion.getMessage();
 			return chain(controller: "error", action: "error");
-		}
-	}
-
-	@Transactional
-	private def crearYguardarUsuario(def params) {
-		try {
-			//Instancio opciones del juego
-			OpcionesDelJuego opcionesDelJuego = OpcionesDelJuego.getAll().get(0);
-
-			//Creo el usuario
-			Usuario unUsuario = new Usuario(nombre: params.nombre, apellido: params.apellido, contrasenia: encriptadorService.getSha256De(params.contrasenia),
-										email: params.email, nombreDelEquipo: params.nombreDelEquipo, admin: false,
-										presupuesto: opcionesDelJuego.getPresupuestoInicial(), cambiosGranDt: opcionesDelJuego.getCambiosGranDtIniciales(), 												cambiosInternos: opcionesDelJuego.getCambiosInternosIniciales(),
-										cambiosDeSuplente: opcionesDelJuego.getCambiosDeSuplenteIniciales());
-
-			//Formacion y equipo
-			Formacion unaFormacion = Formacion.findByCantidadDeDefensoresAndCantidadDeVolantesAndCantidadDeDelanteros(4, 4, 2);
-			EquipoDeUnaFecha unEquipo = new EquipoDeUnaFecha(fecha: FechaActual.first().getNumeroDeFecha(), formacion: unaFormacion);
-
-			if (equipoDeUnaFechaService.guardar(unEquipo)) {
-				unUsuario.addToEquipos(unEquipo);
-				if (usuarioService.guardar(unUsuario)) {
-					Torneo torneoPrincipal = Torneo.findByTorneoPrincipal(true);
-					if (torneoPrincipal) {
-						//torneoPrincipal.addToParticipantes(unUsuario);
-						//guardadoService.guardar(torneoPrincipal);
-					}
-					flash.message = "Usuario creado!";
-				}
-				else flash.errorMessage = "Error al crear usuario";
-
-			}
-			else flash.errorMessage = "Error al crear el equipo inicial";
-		}
-		catch(Exception unaExcepcion) {
-			flash.errorMessage = unaExcepcion.getMessage();
 		}
 	}
  

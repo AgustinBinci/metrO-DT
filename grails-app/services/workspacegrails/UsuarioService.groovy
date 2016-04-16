@@ -6,41 +6,75 @@ import workspacegrails.Servicio;
 @Transactional
 class UsuarioService extends Servicio {
 	def coleccionesService;
+	def equipoDeUnaFechaService;
+	def encriptadorService;
+
+	@Override
+	public void setAtributos(def usuario, def params) {
+		try {
+			if (params) {
+				if (params.nombre) usuario.setNombre(params.nombre);
+				if (params.apellido) usuario.setApellido(params.apellido);
+				if (params.contrasenia) usuario.setContrasenia(encriptadorService.getSha256De(params.contrasenia));
+				if (params.email) usuario.setEmail(params.email);
+				if (params.nombre) usuario.setNombre(params.nombre);			
+				if (params.nombreDelEquipo) usuario.setNombreDelEquipo(params.nombreDelEquipo);		
+			}
+		}
+		catch(Exception unaExcepcion) {
+			throw unaExcepcion;
+		}
+	}
 
 	@Override
 	public Boolean guardar(def unUsuario) {
-		if (unUsuario.save(flush: true)) return true;
-		return false;
+		try {
+			for (EquipoDeUnaFecha unEquipo : unUsuario.getEquipos()) {
+				if (!equipoDeUnaFechaService.guardar(unEquipo)) return false;
+			}
+
+			//TODO: agregar el usuario al torneo
+			if (unUsuario.save(flush: true)) return true;
+
+			return false;
+		}
+		catch(Exception unaExcepcion) {
+			throw unaExcepcion;
+		}
 	}
 
 	@Override
 	public Boolean eliminar(def unUsuario) {
-		def equipos = unUsuario.getEquipos();
-		coleccionesService.eliminarObjetosDeColeccion(equipos);
-		unUsuario.delete(flush: true);
-		if (unUsuario.hasErrors()) return false;
-		return true;
+		try {
+			def equipos = unUsuario.getEquipos();
+			coleccionesService.eliminarObjetosDeColeccion(equipos);
+			unUsuario.delete(flush: true);
+			if (unUsuario.hasErrors()) return false;
+			return true;
+		}
+		catch(Exception unaExcepcion) {
+			throw unaExcepcion;
+		}
 	}
 
 	@Override
-	public def crear(def params) {
+	public def crear() {
 		try {
+			Usuario usuario = new Usuario();
+
 			//Instancio opciones del juego
 			OpcionesDelJuego opcionesDelJuego = OpcionesDelJuego.getAll().get(0);
 
-			//Creo el usuario
-			Usuario unUsuario = new Usuario(nombre: params.nombre, apellido: params.apellido, contrasenia: encriptadorService.getSha256De(params.contrasenia),
-										email: params.email, nombreDelEquipo: params.nombreDelEquipo, admin: false,
-										presupuesto: opcionesDelJuego.getPresupuestoInicial(), cambiosGranDt: opcionesDelJuego.getCambiosGranDtIniciales(), 												cambiosInternos: opcionesDelJuego.getCambiosInternosIniciales(),
-										cambiosDeSuplente: opcionesDelJuego.getCambiosDeSuplenteIniciales());
+			usuario.setAdmin(false);
+			usuario.setPresupuesto(OpcionesDelJuego.getPresupuestoInicial());
+			usuario.setCambiosGranDt(OpcionesDelJuego.getCambiosGranDtIniciales());
+			usuario.setCambiosInternos(OpcionesDelJuego.getCambiosInternosIniciales());
+			usuario.setCambiosDeSuplente(OpcionesDelJuego.getCambiosDeSuplenteIniciales());
 
-			//Formacion y equipo
-			Formacion unaFormacion = Formacion.findByCantidadDeDefensoresAndCantidadDeVolantesAndCantidadDeDelanteros(4, 4, 2);
-			EquipoDeUnaFecha unEquipo = new EquipoDeUnaFecha(fecha: FechaActual.first().getNumeroDeFecha(), formacion: unaFormacion);
+			EquipoDeUnaFecha equipoDeUnaFecha = equipoDeUnaFechaService.crear();
+			usuario.addToEquipos(equipoDeUnaFecha);
 
-			unUsuario.addToEquipos(unEquipo);
-
-			return unUsuario;
+			return usuario;
 		}
 		catch(Exception unaExcepcion) {
 			throw unaExcepcion;

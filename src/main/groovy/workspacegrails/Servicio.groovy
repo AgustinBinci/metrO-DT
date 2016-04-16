@@ -6,17 +6,28 @@ abstract class Servicio {
 
 	@Transactional
 	public Boolean guardar(def unObjeto) {
-		if (unObjeto.save()) return true;
-		return false;
+		try {
+			if (unObjeto.save()) return true;
+			return false;
+		}
+		catch(Exception unaExcepcion) {
+			throw unaExcepcion;
+		}
 	}
 
 	@Transactional
 	public Boolean eliminar(def unObjeto) {
-		unObjeto.delete();
-		if (!unObjeto) return true;
-		return false;
+		try{
+			unObjeto.delete();
+			if (!unObjeto) return true;
+			return false;
+		}
+		catch(Exception unaExcepcion) {
+			throw unaExcepcion;
+		}
 	}
 
-	public abstract def crear(def params);
+	public abstract void setAtributos(def unObjeto, def params);
+	public abstract def crear();
 
 }
