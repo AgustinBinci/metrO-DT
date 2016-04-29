@@ -11,9 +11,7 @@
 			<div class="container">
 				<div class="panel panel-default">
 	
-					<div class="panel-heading">
-
-					
+					<div class="panel-heading">					
 
 						<!-- Brand and toggle get grouped for better mobile display -->
 							<div class="navbar-header">
@@ -30,7 +28,7 @@
 								<ul class="nav navbar-nav" role="navigation">
 									<li><g:link action="edit"><span class="glyphicon glyphicon-edit"></span> <font style="font-weight: bold;">&nbsp;<g:message code="default.edit" /></font></g:link></li>
 									<li><g:link action="cambiarContrasenia"><span class="glyphicon glyphicon-edit"></span> <font style="font-weight: bold;">&nbsp;Cambiar contraseña</font></g:link></li>
-									<li><g:link action="delete" id="${usuario?.getId()}"><span class="glyphicon glyphicon-remove"></span> <font style="font-weight: bold;">&nbsp;<g:message code="default.delete" /></font></g:link></li>
+									<li><g:link action="deleteLogico" id="${usuario?.getId()}"><span class="glyphicon glyphicon-remove"></span> <font style="font-weight: bold;">&nbsp;<g:message code="default.delete" /></font></g:link></li>
 								</ul>
 							</div>
 

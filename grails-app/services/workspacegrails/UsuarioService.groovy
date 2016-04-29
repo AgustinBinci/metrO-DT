@@ -46,11 +46,27 @@ class UsuarioService extends Servicio {
 	@Override
 	public Boolean eliminar(def unUsuario) {
 		try {
+			//Lo saco del equipo
 			def equipos = unUsuario.getEquipos();
 			coleccionesService.eliminarObjetosDeColeccion(equipos);
+
+			//TODO: sacarlo del torneo
+
+			//Elimino
+			//TODO: eliminacion logica
 			unUsuario.delete(flush: true);
 			if (unUsuario.hasErrors()) return false;
 			return true;
+		}
+		catch(Exception unaExcepcion) {
+			throw unaExcepcion;
+		}
+	}
+
+	public Boolean eliminarLogicamente(def unUsuario) {
+		try {
+			unUsuario.setActivo(false);
+			unUsuario.save();
 		}
 		catch(Exception unaExcepcion) {
 			throw unaExcepcion;
@@ -70,6 +86,7 @@ class UsuarioService extends Servicio {
 			usuario.setCambiosGranDt(OpcionesDelJuego.getCambiosGranDtIniciales());
 			usuario.setCambiosInternos(OpcionesDelJuego.getCambiosInternosIniciales());
 			usuario.setCambiosDeSuplente(OpcionesDelJuego.getCambiosDeSuplenteIniciales());
+			usuario.setActivo(true);
 
 			EquipoDeUnaFecha equipoDeUnaFecha = equipoDeUnaFechaService.crear();
 			usuario.addToEquipos(equipoDeUnaFecha);

@@ -56,10 +56,12 @@ class BootStrap {
 
 	//Usuarios
 	Usuario admin = new Usuario(nombre: "Agustin", apellido: "Binci", email: "agustin_attaque_77@hotmail.com", contrasenia: encriptadorService.getSha256De("1"), nombreDelEquipo: "Equipo de agustin", admin: true, presupuesto: opcionesDelJuego.getPresupuestoInicial(), cambiosGranDt: opcionesDelJuego.getCambiosGranDtIniciales(), cambiosInternos: opcionesDelJuego.getCambiosInternosIniciales(), cambiosDeSuplente: opcionesDelJuego.getCambiosDeSuplenteIniciales());
+	admin.setActivo(true);
 	admin.addToEquipos(unEquipo);
 	admin.save(failOnError: true);
 
 	Usuario user = new Usuario(nombre: "Pablo", apellido: "Saffer", email: "psg@hotmail.com", contrasenia: encriptadorService.getSha256De("1"), nombreDelEquipo: "Equipo de pablo", admin: false, presupuesto: opcionesDelJuego.getPresupuestoInicial(), cambiosGranDt: opcionesDelJuego.getCambiosGranDtIniciales(), cambiosInternos: opcionesDelJuego.getCambiosInternosIniciales(), cambiosDeSuplente: opcionesDelJuego.getCambiosDeSuplenteIniciales());
+	user.setActivo(true);
 	user.addToEquipos(otroEquipo);
 	user.save(failOnError: true);
 

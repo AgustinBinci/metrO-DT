@@ -2,7 +2,7 @@ package workspacegrails
 
 import grails.transaction.Transactional
 
-class UsuarioController extends GeneralController{
+class UsuarioController extends GeneralController {
 
 	static transactional = true;
 
@@ -16,7 +16,7 @@ class UsuarioController extends GeneralController{
 
 	def index() {
 		try {
-			def usuarios = Usuario.list();
+			def usuarios = Usuario.findAllWhere(activo: true);
 			List<UsuarioDTO> usuariosIndex = new ArrayList<>();
 
 			for (Usuario unUsuario : usuarios) {
@@ -36,7 +36,7 @@ class UsuarioController extends GeneralController{
 	def login() {
 		try {
 			if (params.email && params.contrasenia) {
-				Usuario unUsuario = Usuario.findByEmailAndContrasenia(params.email, encriptadorService.getSha256De(params.contrasenia));	
+				Usuario unUsuario = Usuario.findByEmailAndContraseniaAndActivo(params.email, encriptadorService.getSha256De(params.contrasenia), true);	
 				if (unUsuario) {
 					session.user = unUsuario;
 					return chain(controller: "home", action: "index");
@@ -89,7 +89,7 @@ class UsuarioController extends GeneralController{
 				errores.addAll(validadorDeNuevaContraseniaService.getErroresDeValidacion(params));
 
 				//Chequeo email repetido
-				Usuario usuarioExistente = Usuario.findByEmail(params.email);
+				Usuario usuarioExistente = Usuario.findByEmailAndActive(params.email, true);
 				if (usuarioExistente) errores.add("Ya existe un usuario con ese email");
 
 				if (errores.isEmpty()) {
@@ -189,7 +189,7 @@ class UsuarioController extends GeneralController{
 				else {
 					List<String> errores = validadorDeUsuarioService.getErroresDeValidacion(params);
 
-					if (unUsuario.getEmail() != params.email && Usuario.findByEmail(params.email)) errores.add("Ya existe un usuario con ese email");
+					if (unUsuario.getEmail() != params.email && Usuario.findByEmailAndActivo(params.email, true)) errores.add("Ya existe un usuario con ese email");
 
 					if (errores.isEmpty()) {
 						usuarioService.setAtributos(unUsuario, params);
@@ -241,36 +241,74 @@ class UsuarioController extends GeneralController{
 	@Transactional
 	def delete() {
 		try {
+			Usuario unUsuario = this.getUserToDelete(params);
+			if (unUsuario) {
+				if (usuarioService.eliminar(unUsuario)) {
+					flash.message = "Usuario eliminado correctamente";
+					if (session.user) return chain(action: "index");
+					else return chain(controller: "home", action: "index");
+				}
+				else {
+					flash.errorMessage = "Error al eliminar el usuario";
+					return chain(action: "index");
+				}
+			}
+		}
+		catch(Exception unaExcepcion) {
+			flash.errorMessage = unaExcepcion.getMessage();
+			return chain(controller: "error", action: "error");
+		}
+	}
+
+	@Transactional
+	def deleteLogico() {
+		try {
+			Usuario unUsuario = this.getUserToDelete(params);
+			if (unUsuario) {
+				if (usuarioService.eliminarLogicamente(unUsuario)) {
+					flash.message = "Usuario eliminado correctamente";
+					if (session.user) return chain(action: "index");
+					else return chain(controller: "home", action: "index");
+				}
+				else {
+					flash.errorMessage = "Error al eliminar el usuario";
+					return chain(action: "index");
+				}
+			}
+		}
+		catch(Exception unaExcepcion) {
+			flash.errorMessage = unaExcepcion.getMessage();
+			return chain(controller: "error", action: "error");
+		}
+	}
+
+	@Transactional
+	private Usuario getUserToDelete(def params) {
+		try {
 			if (params.id) {
 				Usuario unUsuario = Usuario.findById(params.id);
 				if (unUsuario) {
 					if( (session.user.getId() == unUsuario.getId()) || (session.user.getAdmin()) ) {
 						if(session.user.getId() == unUsuario.getId()) session.user = null;
-						if (usuarioService.eliminar(unUsuario)) {
-							flash.message = "Usuario eliminado correctamente";
-							if (session.user) return chain(action: "index");
-							else return chain(controller: "home", action: "index");
-						}
-						else {
-							flash.errorMessage = "Error al eliminar el usuario";
-							return chain(action: "index");
-						}
+						return unUsuario;
 					}
 					else {
 						flash.errorMessage = "No tenes los permisos para eliminar este usuario";
-						return chain(action: "index");
+						chain(action: "index");
 					}
 				}
 				else {
 					flash.errorMessage = "No existe ningun usuario con ese identificador";
-					return chain(action: "index");
+					chain(action: "index");
 				}
 			}
-			else return chain(action: "index");
+			else chain(action: "index");
+			return null;
 		}
 		catch(Exception unaExcepcion) {
 			flash.errorMessage = unaExcepcion.getMessage();
-			return chain(controller: "error", action: "error");
+			chain(controller: "error", action: "error");
+			return null;
 		}
 	}
  

@@ -27,6 +27,7 @@ class Usuario implements Comparable<Usuario> {
 	Integer cambiosDeSuplente;
 	List<EquipoDeUnaFecha> equipos;
 	List<CambioAeleccion> cambiosAeleccion;
+	Boolean activo;
 
 	public void addToEquipos(EquipoDeUnaFecha unEquipo) {
 		if (!this.equipos) this.equipos = new ArrayList<EquipoDeUnaFecha>();
