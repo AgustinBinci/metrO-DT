@@ -13,6 +13,10 @@ class UsuarioController extends GeneralController {
 	def validadorDeUsuarioService;
 	def validadorDeNuevaContraseniaService;
 	def validadorDeContraseniaService;
+	def generadorDeStringsService;
+	def datosGeneralesService;
+	def peticionDeCambioDeContraseniaService;
+	def mailService;
 
 	def index() {
 		try {
@@ -136,6 +140,52 @@ class UsuarioController extends GeneralController {
 		}
 	}
 
+	def regenerarContrasenia() {
+		try {
+			if (params.enlace) {
+				 PeticionDeCambioDeContrasenia unaPeticion = PeticionDeCambioDeContrasenia.findByEnlace(params.enlace);
+				 
+				if (unaPeticion) {
+					//Genero contraseña
+					String unaContrasenia = generadorDeStringsService.generarString(datosGeneralesService.getTamanioStandarDeLaContrasenia());
+	
+					//Guardo contraseña encriptada
+					unaPeticion.getUsuario().setContrasenia(encriptadorService.getSha256De(unaContrasenia));
+
+					//Elimino peticion
+					peticionDeCambioDeContraseniaService.eliminar(unaPeticion);
+
+					//TODO: Enviar email con la contraseña
+			
+					flash.message = "Tu contraseña fué actualizada automáticamente, te llegará un mail con la nueva contraseña";
+				}
+				else flash.errorMessage = "El enlace no existe";
+		
+			}
+			else {
+				if (params.email) {
+					Usuario unUsuario = Usuario.findByEmail(params.email);
+
+					if (unUsuario) {
+						PeticionDeCambioDeContrasenia unaPeticion = peticionDeCambioDeContraseniaService.crear();
+						peticionDeCambioDeContraseniaService.setAtributos(unaPeticion, [usuario: unUsuario, enlace: generadorDeStringsService.generarString(datosGeneralesService.getTamanioDelEnlace())]);
+						
+						//TODO: Enviar email con el enlace
+
+						flash.message = "Tu petición fue procesada, te llegará un mail con un enlace para recuperar tu contraseña";
+					}
+					else flash.errorMessage = "No hay ningun usuario con ese email";
+				}
+				else return render(view: "regenerarContrasenia", model: []);
+			}
+			return chain(action: "login");
+			
+		}
+		catch(Exception unaExcepcion) {
+			flash.errorMessage = unaExcepcion.getMessage();
+			return chain(controller: "error", action: "error");
+		}
+	}
 	
 	def cambiarContrasenia() {
 		try {

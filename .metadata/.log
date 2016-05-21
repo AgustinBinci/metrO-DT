@@ -1038,3 +1038,246 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 !MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
 !SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2016-02-11 17:16:25.349
 !MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+!SESSION 2016-05-07 20:37:09.381 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_AR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2016-05-07 20:37:46.768
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2016-05-07 20:37:46.768
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2016-05-07 20:37:46.768
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+!SESSION 2016-05-07 20:40:20.583 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_AR
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.java.product -data /home/metro/workspaceGrails -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2016-05-07 20:40:29.363
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2016-05-07 20:40:29.363
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2016-05-07 20:40:29.364
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-05-07 20:42:15.934
+!MESSAGE Code assist internal error
+!STACK 0
+java.lang.UnsupportedOperationException
+	at java.util.Collections$UnmodifiableMap.put(Collections.java:1457)
+	at org.codehaus.groovy.ast.ImmutableClassNode.enableWriteProtection(ImmutableClassNode.java:128)
+	at org.codehaus.groovy.ast.ImmutableClassNode.getDeclaredMethods(ImmutableClassNode.java:120)
+	at org.codehaus.groovy.ast.ClassNode.getMethods(ClassNode.java:986)
+	at org.eclipse.jdt.groovy.search.CategoryTypeLookup.lookupType(CategoryTypeLookup.java:69)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.lookupExpressionType(TypeInferencingVisitorWithRequestor.java:2047)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.handleSimpleExpression(TypeInferencingVisitorWithRequestor.java:2015)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitVariableExpression(TypeInferencingVisitorWithRequestor.java:947)
+	at org.codehaus.groovy.ast.expr.VariableExpression.visit(VariableExpression.java:70)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitMethodCallExpression(TypeInferencingVisitorWithRequestor.java:1641)
+	at org.codehaus.groovy.ast.expr.MethodCallExpression.visit(MethodCallExpression.java:64)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitReturnStatement(CodeVisitorSupport.java:75)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitReturnStatement(ClassCodeVisitorSupport.java:251)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitReturnStatement(TypeInferencingVisitorWithRequestor.java:1423)
+	at org.codehaus.groovy.ast.stmt.ReturnStatement.visit(ReturnStatement.java:47)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitBlockStatement(CodeVisitorSupport.java:37)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitBlockStatement(ClassCodeVisitorSupport.java:206)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBlockStatement(TypeInferencingVisitorWithRequestor.java:1408)
+	at org.codehaus.groovy.ast.stmt.BlockStatement.visit(BlockStatement.java:69)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitClassCodeContainer(ClassCodeVisitorSupport.java:103)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitConstructorOrMethod(ClassCodeVisitorSupport.java:114)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitConstructorOrMethod(TypeInferencingVisitorWithRequestor.java:842)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitJDT(TypeInferencingVisitorWithRequestor.java:571)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitJDT(TypeInferencingVisitorWithRequestor.java:404)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitCompilationUnit(TypeInferencingVisitorWithRequestor.java:352)
+	at org.codehaus.groovy.eclipse.editor.highlighting.GatherSemanticReferences.findSemanticHighlightingReferences(GatherSemanticReferences.java:52)
+	at org.codehaus.groovy.eclipse.editor.highlighting.GroovySemanticReconciler.reconciled(GroovySemanticReconciler.java:153)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1664)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:212)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:164)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.initialReconcile(JavaCompositeReconcilingStrategy.java:144)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:105)
+	at org.eclipse.jdt.internal.ui.text.JavaReconciler.initialProcess(JavaReconciler.java:406)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:173)
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-05-07 20:42:23.036
+!MESSAGE Code assist internal error
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 507
+	at org.eclipse.jdt.internal.compiler.lookup.TypeSystem.updateCaches(TypeSystem.java:335)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.updateCaches(LookupEnvironment.java:1592)
+	at org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding.setResolvedType(UnresolvedReferenceBinding.java:124)
+	at org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding.resolve(UnresolvedReferenceBinding.java:112)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:184)
+	at org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding.resolve(ParameterizedTypeBinding.java:1024)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:162)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.superclass(BinaryTypeBinding.java:1799)
+	at org.codehaus.jdt.groovy.internal.compiler.ast.JDTClassNode.initialize(JDTClassNode.java:214)
+	at org.codehaus.jdt.groovy.internal.compiler.ast.JDTClassNode.lazyClassInit(JDTClassNode.java:158)
+	at org.codehaus.groovy.ast.ClassNode.getDeclaredConstructors(ClassNode.java:579)
+	at org.eclipse.jdt.groovy.search.SimpleTypeLookup.findType(SimpleTypeLookup.java:288)
+	at org.eclipse.jdt.groovy.search.SimpleTypeLookup.lookupType(SimpleTypeLookup.java:83)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.lookupExpressionType(TypeInferencingVisitorWithRequestor.java:2045)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.handleSimpleExpression(TypeInferencingVisitorWithRequestor.java:2015)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitConstructorCallExpression(TypeInferencingVisitorWithRequestor.java:1483)
+	at org.codehaus.groovy.ast.expr.ConstructorCallExpression.visit(ConstructorCallExpression.java:44)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBinaryExpression(TypeInferencingVisitorWithRequestor.java:1027)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitDeclarationExpression(TypeInferencingVisitorWithRequestor.java:1503)
+	at org.codehaus.groovy.ast.expr.DeclarationExpression.visit(DeclarationExpression.java:86)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitExpressionStatement(CodeVisitorSupport.java:71)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitExpressionStatement(ClassCodeVisitorSupport.java:236)
+	at org.codehaus.groovy.ast.stmt.ExpressionStatement.visit(ExpressionStatement.java:40)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitBlockStatement(CodeVisitorSupport.java:37)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitBlockStatement(ClassCodeVisitorSupport.java:206)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBlockStatement(TypeInferencingVisitorWithRequestor.java:1408)
+	at org.codehaus.groovy.ast.stmt.BlockStatement.visit(BlockStatement.java:69)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitClassCodeContainer(ClassCodeVisitorSupport.java:103)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitConstructorOrMethod(ClassCodeVisitorSupport.java:114)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitConstructorOrMethod(TypeInferencingVisitorWithRequestor.java:842)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitJDT(TypeInferencingVisitorWithRequestor.java:571)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitJDT(TypeInferencingVisitorWithRequestor.java:404)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitCompilationUnit(TypeInferencingVisitorWithRequestor.java:352)
+	at org.codehaus.groovy.eclipse.editor.highlighting.GatherSemanticReferences.findSemanticHighlightingReferences(GatherSemanticReferences.java:52)
+	at org.codehaus.groovy.eclipse.editor.highlighting.GroovySemanticReconciler.reconciled(GroovySemanticReconciler.java:153)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1664)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:212)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:164)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.initialReconcile(JavaCompositeReconcilingStrategy.java:144)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:105)
+	at org.eclipse.jdt.internal.ui.text.JavaReconciler.initialProcess(JavaReconciler.java:406)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:173)
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-05-07 20:42:23.083
+!MESSAGE Code assist internal error
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 398
+	at org.eclipse.jdt.internal.compiler.lookup.TypeSystem.getUnannotatedType(TypeSystem.java:82)
+	at org.eclipse.jdt.internal.compiler.lookup.TypeSystem.getParameterizedType(TypeSystem.java:142)
+	at org.eclipse.jdt.internal.compiler.lookup.TypeSystem.getParameterizedType(TypeSystem.java:172)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.createParameterizedType(LookupEnvironment.java:956)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope$Substitutor.substitute(Scope.java:511)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope$Substitutor.substitute(Scope.java:458)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope.substitute(Scope.java:421)
+	at org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding.superInterfaces(ParameterizedTypeBinding.java:1238)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.superInterfaces(BinaryTypeBinding.java:1838)
+	at org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding.superInterfaces(ParameterizedTypeBinding.java:1238)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.superInterfaces(BinaryTypeBinding.java:1838)
+	at org.codehaus.jdt.groovy.internal.compiler.ast.JDTClassNode.initialize(JDTClassNode.java:220)
+	at org.codehaus.jdt.groovy.internal.compiler.ast.JDTClassNode.lazyClassInit(JDTClassNode.java:158)
+	at org.codehaus.groovy.ast.ClassNode.getDeclaredConstructors(ClassNode.java:579)
+	at org.eclipse.jdt.groovy.search.SimpleTypeLookup.findType(SimpleTypeLookup.java:288)
+	at org.eclipse.jdt.groovy.search.SimpleTypeLookup.lookupType(SimpleTypeLookup.java:83)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.lookupExpressionType(TypeInferencingVisitorWithRequestor.java:2045)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.handleSimpleExpression(TypeInferencingVisitorWithRequestor.java:2015)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitConstructorCallExpression(TypeInferencingVisitorWithRequestor.java:1483)
+	at org.codehaus.groovy.ast.expr.ConstructorCallExpression.visit(ConstructorCallExpression.java:44)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBinaryExpression(TypeInferencingVisitorWithRequestor.java:1027)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitDeclarationExpression(TypeInferencingVisitorWithRequestor.java:1503)
+	at org.codehaus.groovy.ast.expr.DeclarationExpression.visit(DeclarationExpression.java:86)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitExpressionStatement(CodeVisitorSupport.java:71)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitExpressionStatement(ClassCodeVisitorSupport.java:236)
+	at org.codehaus.groovy.ast.stmt.ExpressionStatement.visit(ExpressionStatement.java:40)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitBlockStatement(CodeVisitorSupport.java:37)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitBlockStatement(ClassCodeVisitorSupport.java:206)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBlockStatement(TypeInferencingVisitorWithRequestor.java:1408)
+	at org.codehaus.groovy.ast.stmt.BlockStatement.visit(BlockStatement.java:69)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitIfElse(CodeVisitorSupport.java:58)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitIfElse(ClassCodeVisitorSupport.java:246)
+	at org.codehaus.groovy.ast.stmt.IfStatement.visit(IfStatement.java:41)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitBlockStatement(CodeVisitorSupport.java:37)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitBlockStatement(ClassCodeVisitorSupport.java:206)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBlockStatement(TypeInferencingVisitorWithRequestor.java:1408)
+	at org.codehaus.groovy.ast.stmt.BlockStatement.visit(BlockStatement.java:69)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitIfElse(CodeVisitorSupport.java:58)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitIfElse(ClassCodeVisitorSupport.java:246)
+	at org.codehaus.groovy.ast.stmt.IfStatement.visit(IfStatement.java:41)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitBlockStatement(CodeVisitorSupport.java:37)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitBlockStatement(ClassCodeVisitorSupport.java:206)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBlockStatement(TypeInferencingVisitorWithRequestor.java:1408)
+	at org.codehaus.groovy.ast.stmt.BlockStatement.visit(BlockStatement.java:69)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitClassCodeContainer(ClassCodeVisitorSupport.java:103)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitConstructorOrMethod(ClassCodeVisitorSupport.java:114)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitConstructorOrMethod(TypeInferencingVisitorWithRequestor.java:842)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitJDT(TypeInferencingVisitorWithRequestor.java:571)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitJDT(TypeInferencingVisitorWithRequestor.java:404)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitCompilationUnit(TypeInferencingVisitorWithRequestor.java:352)
+	at org.codehaus.groovy.eclipse.editor.highlighting.GatherSemanticReferences.findSemanticHighlightingReferences(GatherSemanticReferences.java:52)
+	at org.codehaus.groovy.eclipse.editor.highlighting.GroovySemanticReconciler.reconciled(GroovySemanticReconciler.java:153)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1664)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:212)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:164)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.initialReconcile(JavaCompositeReconcilingStrategy.java:144)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:105)
+	at org.eclipse.jdt.internal.ui.text.JavaReconciler.initialProcess(JavaReconciler.java:406)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:173)
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-05-07 20:42:23.332
+!MESSAGE Code assist internal error
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 265
+	at org.eclipse.jdt.internal.compiler.lookup.TypeSystem.updateCaches(TypeSystem.java:335)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.updateCaches(LookupEnvironment.java:1592)
+	at org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding.setResolvedType(UnresolvedReferenceBinding.java:124)
+	at org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding.resolve(UnresolvedReferenceBinding.java:112)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:184)
+	at org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding.resolve(ParameterizedTypeBinding.java:1024)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:162)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveTypesFor(BinaryTypeBinding.java:1442)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.methods(BinaryTypeBinding.java:1396)
+	at org.codehaus.jdt.groovy.internal.compiler.ast.JDTClassNode.initializeMembers(JDTClassNode.java:263)
+	at org.codehaus.jdt.groovy.internal.compiler.ast.JDTClassNode.initialize(JDTClassNode.java:227)
+	at org.codehaus.jdt.groovy.internal.compiler.ast.JDTClassNode.lazyClassInit(JDTClassNode.java:158)
+	at org.codehaus.groovy.ast.ClassNode.getUnresolvedSuperClass(ClassNode.java:1113)
+	at org.codehaus.groovy.ast.ClassNode.getUnresolvedSuperClass(ClassNode.java:1103)
+	at org.codehaus.groovy.ast.ClassNode.getSuperClass(ClassNode.java:1097)
+	at org.eclipse.jdt.groovy.search.CategoryTypeLookup.findAllSupers(CategoryTypeLookup.java:142)
+	at org.eclipse.jdt.groovy.search.CategoryTypeLookup.isAssignableFrom(CategoryTypeLookup.java:166)
+	at org.eclipse.jdt.groovy.search.CategoryTypeLookup.lookupType(CategoryTypeLookup.java:88)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.lookupExpressionType(TypeInferencingVisitorWithRequestor.java:2047)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.handleSimpleExpression(TypeInferencingVisitorWithRequestor.java:2015)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitConstantExpression(TypeInferencingVisitorWithRequestor.java:1477)
+	at org.codehaus.groovy.ast.expr.ConstantExpression.visit(ConstantExpression.java:79)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitMethodCallExpression(TypeInferencingVisitorWithRequestor.java:1649)
+	at org.codehaus.groovy.ast.expr.MethodCallExpression.visit(MethodCallExpression.java:64)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitExpressionStatement(CodeVisitorSupport.java:71)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitExpressionStatement(ClassCodeVisitorSupport.java:236)
+	at org.codehaus.groovy.ast.stmt.ExpressionStatement.visit(ExpressionStatement.java:40)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitBlockStatement(CodeVisitorSupport.java:37)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitBlockStatement(ClassCodeVisitorSupport.java:206)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBlockStatement(TypeInferencingVisitorWithRequestor.java:1408)
+	at org.codehaus.groovy.ast.stmt.BlockStatement.visit(BlockStatement.java:69)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitIfElse(CodeVisitorSupport.java:58)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitIfElse(ClassCodeVisitorSupport.java:246)
+	at org.codehaus.groovy.ast.stmt.IfStatement.visit(IfStatement.java:41)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitBlockStatement(CodeVisitorSupport.java:37)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitBlockStatement(ClassCodeVisitorSupport.java:206)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBlockStatement(TypeInferencingVisitorWithRequestor.java:1408)
+	at org.codehaus.groovy.ast.stmt.BlockStatement.visit(BlockStatement.java:69)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitIfElse(CodeVisitorSupport.java:58)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitIfElse(ClassCodeVisitorSupport.java:246)
+	at org.codehaus.groovy.ast.stmt.IfStatement.visit(IfStatement.java:41)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitBlockStatement(CodeVisitorSupport.java:37)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitBlockStatement(ClassCodeVisitorSupport.java:206)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitBlockStatement(TypeInferencingVisitorWithRequestor.java:1408)
+	at org.codehaus.groovy.ast.stmt.BlockStatement.visit(BlockStatement.java:69)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitClassCodeContainer(ClassCodeVisitorSupport.java:103)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitConstructorOrMethod(ClassCodeVisitorSupport.java:114)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitConstructorOrMethod(TypeInferencingVisitorWithRequestor.java:842)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitJDT(TypeInferencingVisitorWithRequestor.java:571)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitJDT(TypeInferencingVisitorWithRequestor.java:404)
+	at org.eclipse.jdt.groovy.search.TypeInferencingVisitorWithRequestor.visitCompilationUnit(TypeInferencingVisitorWithRequestor.java:352)
+	at org.codehaus.groovy.eclipse.editor.highlighting.GatherSemanticReferences.findSemanticHighlightingReferences(GatherSemanticReferences.java:52)
+	at org.codehaus.groovy.eclipse.editor.highlighting.GroovySemanticReconciler.reconciled(GroovySemanticReconciler.java:153)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1664)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:212)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:164)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.initialReconcile(JavaCompositeReconcilingStrategy.java:144)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:105)
+	at org.eclipse.jdt.internal.ui.text.JavaReconciler.initialProcess(JavaReconciler.java:406)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:173)

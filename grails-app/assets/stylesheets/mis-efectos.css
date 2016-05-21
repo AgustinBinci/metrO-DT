@@ -32,3 +32,49 @@ body {
   left: 100%;
   line-height: 34px;
 }
+
+.rectangulo {
+  background-color: rgba(18, 18, 18, 0.6);
+}
+
+.rectangulo-collapse {
+  background-color: transparent;
+}
+
+.btn-black-left {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #CCC0C0;
+  border: none;
+  border-right: solid;
+  border-color: #8E8E8E;
+}
+
+.btn-black-right {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #CCC0C0;
+  border: none;
+  border-left: solid;
+  border-color: #8E8E8E;
+}
+
+
+.link {
+  text-align: left;
+  padding: 0pt;
+  margin: 0pt;
+}
+
+.link > a {
+  color: white;
+  font-weight: 500;
+  line-height: 0;
+}
+
+.btn-black-right:hover, .btn-black-left:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tr-grande {
+  font-size: 13pt;
+}

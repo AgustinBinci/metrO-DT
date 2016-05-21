@@ -121,3 +121,16 @@ grails:
 endpoints:
     jmx:
         unique-names: true
+---
+grails:
+    mail:
+        host: "smtp.gmail.com"
+        port: 587
+        username: "lacupuladelgdt@gmail.com"
+        password: "lacupuladelgrandt"
+        props:
+            mail.smtp.auth: "true"
+            mail.smtp.socketFactory.port: "587"
+            mail.smtp.socketFactory.class: "javax.net.ssl.SSLSocketFactory"
+            mail.smtp.socketFactory.fallback: "false"
+            mail.smtp.ssl.enable: "true"

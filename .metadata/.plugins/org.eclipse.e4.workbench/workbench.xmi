@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_RSRp4cxcEeWErPZMXNrVdA" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_RSRp4sxcEeWErPZMXNrVdA" bindingContexts="_RSSQ8MxcEeWErPZMXNrVdA">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.springsource.ide.eclipse.dashboard.ui.dashboard.elementFactory&quot; id=&quot;org.springsource.ide.eclipse.commons.gettingstarted.dashboard.WelcomeDashboard&quot; name=&quot;Dashboard&quot; tooltip=&quot;Dashboard&quot;>&#xA;&lt;persistable openDashboard=&quot;true&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;UsuarioController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/UsuarioController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/UsuarioController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;UrlMappings.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/UrlMappings.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/UrlMappings.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;OpcionesDelJuegoController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/OpcionesDelJuegoController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/OpcionesDelJuegoController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;LigaController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/LigaController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/LigaController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;JugadorController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/JugadorController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/JugadorController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;HomeController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/HomeController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/HomeController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;GeneralInterceptor.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/GeneralInterceptor.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/GeneralInterceptor.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;GeneralController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/GeneralController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/GeneralController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;FechaActualController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/FechaActualController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/FechaActualController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;ErrorController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/ErrorController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/ErrorController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;EquipoDeUnaFechaController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/EquipoDeUnaFechaController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/EquipoDeUnaFechaController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;DatosDeUnaFechaController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/DatosDeUnaFechaController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/DatosDeUnaFechaController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;ClubController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/ClubController.groovy&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/ClubController.groovy&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;AdminInterceptor&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/AdminInterceptor&quot;>&#xA;&lt;persistable uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/AdminInterceptor&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.springsource.ide.eclipse.dashboard.ui.dashboard.elementFactory&quot; id=&quot;org.springsource.ide.eclipse.commons.gettingstarted.dashboard.WelcomeDashboard&quot; name=&quot;Dashboard&quot; tooltip=&quot;Dashboard&quot;>&#xA;&lt;persistable openDashboard=&quot;true&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_RSRp4sxcEeWErPZMXNrVdA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_RvysUsxcEeWErPZMXNrVdA" label="%trimmedwindow.label.eclipseSDK" x="7" y="24" width="1024" height="752">
@@ -194,12 +194,12 @@
           <tags>persp.actionSet:org.eclipse.wst.server.ui.internal.webbrowser.actionSet</tags>
           <tags>persp.actionSet:org.eclipse.debug.ui.breakpointActionSet</tags>
           <tags>persp.actionSet:org.grails.ide.eclipse.ui.actionSet</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_k7BxIcxnEeWKUJVH3foAfQ" selectedElement="_k7BxIsxnEeWKUJVH3foAfQ" horizontal="true">
-            <children xsi:type="basic:PartSashContainer" xmi:id="_k7BxIsxnEeWKUJVH3foAfQ" containerData="2500" selectedElement="_k7BxI8xnEeWKUJVH3foAfQ">
-              <children xsi:type="basic:PartStack" xmi:id="_k7BxI8xnEeWKUJVH3foAfQ" elementId="left" containerData="8000" selectedElement="_k7BxJ8xnEeWKUJVH3foAfQ">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_k7BxIcxnEeWKUJVH3foAfQ" selectedElement="_k7BxKsxnEeWKUJVH3foAfQ" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_k7BxIsxnEeWKUJVH3foAfQ" visible="false" containerData="2500" selectedElement="_k7BxI8xnEeWKUJVH3foAfQ">
+              <children xsi:type="basic:PartStack" xmi:id="_k7BxI8xnEeWKUJVH3foAfQ" elementId="left" visible="false" containerData="8000" selectedElement="_k7BxJ8xnEeWKUJVH3foAfQ">
                 <tags>newtablook</tags>
-                <tags>active</tags>
                 <tags>noFocus</tags>
+                <tags>Minimized</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_k7BxJMxnEeWKUJVH3foAfQ" elementId="org.eclipse.jdt.ui.PackageExplorer" toBeRendered="false" ref="_R-vuUMxcEeWErPZMXNrVdA"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_k7BxJcxnEeWKUJVH3foAfQ" elementId="org.eclipse.jdt.ui.TypeHierarchy" toBeRendered="false" ref="_R-yxoMxcEeWErPZMXNrVdA"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_k7BxJsxnEeWKUJVH3foAfQ" elementId="org.eclipse.ui.views.ResourceNavigator" toBeRendered="false" ref="_R-yxocxcEeWErPZMXNrVdA"/>
@@ -211,7 +211,7 @@
                 <children xsi:type="advanced:Placeholder" xmi:id="_k7BxKcxnEeWKUJVH3foAfQ" elementId="org.eclipse.wst.server.ui.ServersView" ref="_k651UMxnEeWKUJVH3foAfQ"/>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_k7BxKsxnEeWKUJVH3foAfQ" containerData="7500" selectedElement="_k7BxMMxnEeWKUJVH3foAfQ">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_k7BxKsxnEeWKUJVH3foAfQ" containerData="7500" selectedElement="_k7BxK8xnEeWKUJVH3foAfQ">
               <children xsi:type="basic:PartSashContainer" xmi:id="_k7BxK8xnEeWKUJVH3foAfQ" containerData="8000" selectedElement="_k7BxLMxnEeWKUJVH3foAfQ" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_k7BxLMxnEeWKUJVH3foAfQ" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_R-gdwMxcEeWErPZMXNrVdA"/>
                 <children xsi:type="basic:PartStack" xmi:id="_k7BxLcxnEeWKUJVH3foAfQ" elementId="middleright" visible="false" containerData="2500" selectedElement="_k7BxLsxnEeWKUJVH3foAfQ">
@@ -263,10 +263,98 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_R-gdwMxcEeWErPZMXNrVdA" elementId="org.eclipse.ui.editorss" selectedElement="_R-gdwcxcEeWErPZMXNrVdA">
-      <children xsi:type="basic:PartStack" xmi:id="_R-gdwcxcEeWErPZMXNrVdA" elementId="org.eclipse.e4.primaryDataStack">
+      <children xsi:type="basic:PartStack" xmi:id="_R-gdwcxcEeWErPZMXNrVdA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_V9Fv4BStEea-6aWKm0mHZA">
         <tags>newtablook</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
+        <tags>active</tags>
+        <tags>noFocus</tags>
+        <children xsi:type="basic:Part" xmi:id="_O7xpQBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="AdminInterceptor" iconURI="platform:/plugin/org.eclipse.ui.editors/icons/full/obj16/file_obj.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;AdminInterceptor&quot; partName=&quot;AdminInterceptor&quot; title=&quot;AdminInterceptor&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/AdminInterceptor&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/AdminInterceptor&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.eclipse.ui.DefaultTextEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_PHi0YBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ClubController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;ClubController.groovy&quot; partName=&quot;ClubController.groovy&quot; title=&quot;ClubController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/ClubController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/ClubController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_Udj20BStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="DatosDeUnaFechaController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;DatosDeUnaFechaController.groovy&quot; partName=&quot;DatosDeUnaFechaController.groovy&quot; title=&quot;DatosDeUnaFechaController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/DatosDeUnaFechaController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/DatosDeUnaFechaController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_UmlP8BStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="EquipoDeUnaFechaController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;EquipoDeUnaFechaController.groovy&quot; partName=&quot;EquipoDeUnaFechaController.groovy&quot; title=&quot;EquipoDeUnaFechaController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/EquipoDeUnaFechaController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/EquipoDeUnaFechaController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_VKmjABStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ErrorController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;ErrorController.groovy&quot; partName=&quot;ErrorController.groovy&quot; title=&quot;ErrorController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/ErrorController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/ErrorController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_VZmBQBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FechaActualController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;FechaActualController.groovy&quot; partName=&quot;FechaActualController.groovy&quot; title=&quot;FechaActualController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/FechaActualController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/FechaActualController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_VoeKwBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="GeneralController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;GeneralController.groovy&quot; partName=&quot;GeneralController.groovy&quot; title=&quot;GeneralController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/GeneralController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/GeneralController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_Vv7doBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="GeneralInterceptor.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;GeneralInterceptor.groovy&quot; partName=&quot;GeneralInterceptor.groovy&quot; title=&quot;GeneralInterceptor.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/GeneralInterceptor.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/GeneralInterceptor.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_V18mEBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="HomeController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;HomeController.groovy&quot; partName=&quot;HomeController.groovy&quot; title=&quot;HomeController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/HomeController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/HomeController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_V9Fv4BStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="JugadorController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;JugadorController.groovy&quot; partName=&quot;JugadorController.groovy&quot; title=&quot;JugadorController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/JugadorController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/JugadorController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+          <tags>active</tags>
+          <tags>activeOnClose</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_WDmnkBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="LigaController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;LigaController.groovy&quot; partName=&quot;LigaController.groovy&quot; title=&quot;LigaController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/LigaController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/LigaController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_WKJUcBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="OpcionesDelJuegoController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;OpcionesDelJuegoController.groovy&quot; partName=&quot;OpcionesDelJuegoController.groovy&quot; title=&quot;OpcionesDelJuegoController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/OpcionesDelJuegoController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/OpcionesDelJuegoController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_WPLlcBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="UrlMappings.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;UrlMappings.groovy&quot; partName=&quot;UrlMappings.groovy&quot; title=&quot;UrlMappings.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/UrlMappings.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/UrlMappings.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_WS8rIBStEea-6aWKm0mHZA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="UsuarioController.groovy" iconURI="platform:/plugin/org.codehaus.groovy.eclipse.ui/icons/groovy_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.codehaus.groovy.eclipse.editor.GroovyEditor&quot; name=&quot;UsuarioController.groovy&quot; partName=&quot;UsuarioController.groovy&quot; title=&quot;UsuarioController.groovy&quot; tooltip=&quot;/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/UsuarioController.groovy&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/home/metro/workspaceGrails/grails-app/controllers/workspacegrails/UsuarioController.groovy&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;275&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.codehaus.groovy.eclipse.editor.GroovyEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_R-vuUMxcEeWErPZMXNrVdA" elementId="org.eclipse.jdt.ui.PackageExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Package Explorer" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/package.gif" closeable="true">
@@ -291,8 +379,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1454713242726&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_k8wPcMxnEeWKUJVH3foAfQ" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -408,11 +494,14 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_RzGfAMxcEeWErPZMXNrVdA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_UkDCoND8EeWHreinzDmsHw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_RTP6Q8xcEeWErPZMXNrVdA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FFBmkBStEea-6aWKm0mHZA" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_RTP6Q8xcEeWErPZMXNrVdA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_RzHGEMxcEeWErPZMXNrVdA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
         <children xsi:type="menu:ToolBarSeparator" xmi:id="_RzHGEcxcEeWErPZMXNrVdA" elementId="additions" toBeRendered="false"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_PF_VMBStEea-6aWKm0mHZA" elementId="org.eclipse.ui.edit.text.actionSet.presentation" visible="false">
+        <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_k7g5UMxnEeWKUJVH3foAfQ" elementId="org.eclipse.wst.server.ui.internal.webbrowser.actionSet">
         <tags>Draggable</tags>
@@ -432,7 +521,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_RzIUMMxcEeWErPZMXNrVdA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_UkLlgdD8EeWHreinzDmsHw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_RTM3B8xcEeWErPZMXNrVdA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FFKwgBStEea-6aWKm0mHZA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_RTM3B8xcEeWErPZMXNrVdA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_RzI7QMxcEeWErPZMXNrVdA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -471,6 +560,9 @@
         <tags>TrimStack</tags>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_oj4HIMxnEeWKUJVH3foAfQ" elementId="bottomleft(org.grails.ide.eclipse.perspective)" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_eMuDwBStEea-6aWKm0mHZA" elementId="left(org.grails.ide.eclipse.perspective)" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
         <tags>TrimStack</tags>
       </children>
     </trimBars>

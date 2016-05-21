@@ -3,8 +3,17 @@ import workspacegrails.*
 class BootStrap {
 
 	def encriptadorService;
+	def mailService;
 
     def init = { servletContext ->
+	
+	//Prueba email
+	/*mailService.sendMail {
+	   to "agustinbinci@gmail.com"
+	   subject "Prueba"
+	   text 'Prueba enviando el mail'
+	}*/
+
 	//Posiciones	
 	(new Arquero()).save(failOnError: true);
 	(new Defensor()).save(failOnError: true);
